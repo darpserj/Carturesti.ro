@@ -5,19 +5,19 @@
 
 @font-face {
 	font-family: 'Montserrat';
-	font-weight: 400;
-	font-display: swap;
 	font-style: normal;
-	font-named-instance: 'Regular';
+	font-weight: 400;
 	src: url("./Montserrat-Regular.woff2") format("woff2");
+	font-display: swap;
+	font-named-instance: 'Regular';
 }
 @font-face {
 	font-family: 'Montserrat';
-	font-weight: 700;
-	font-display: swap;
 	font-style: normal;
-	font-named-instance: 'Bold';
+	font-weight: 700;
 	src: url("./Montserrat-ExtraBold.woff2") format("woff2");
+	font-display: swap;
+	font-named-instance: 'Bold';
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -30,7 +30,7 @@ html {
 
 body { display: block; min-height: 100vh; margin: 0; text-rendering: optimizeSpeed; }
 
-img, picture { max-width: 100%; display: block; }
+img, picture { display: block; max-width: 100%; }
 
 input, button, textarea, select { font: inherit; }
 
@@ -39,6 +39,29 @@ strong { font-weight: 900; }
 .ScreenReaders { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0);white-space: nowrap; border-width: 0; }
 
 /**** CSS Starts here ****/
+
+
+.Button{
+    display: block;
+    padding: 0.5em 1em;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #799900;
+    border-radius: 0.5em;
+
+    &:hover{
+        color: #fff;
+        background-color: #000000;
+    }
+}
+
+a{
+    color: #799900;
+    text-decoration: none;
+    &:hover{color: #000000;}
+}
 
 .container {}
 
@@ -108,8 +131,9 @@ strong { font-weight: 900; }
             display: none;
             height: calc(100vh - 44px);
             padding: 1rem 0;
-            background: #eee;
             overflow-y: auto;
+            background: #eee;
+
         }
         .MainMenu.active {
             display: block;
@@ -129,8 +153,8 @@ strong { font-weight: 900; }
                         font-size: 1.5em;
                         font-weight: 700;
                         color: #222;
-                        background-color: transparent;
                         text-decoration: none;
+                        background-color: transparent;
                         &:hover{
                             color: #799900;
                             background-color: white;
@@ -138,16 +162,16 @@ strong { font-weight: 900; }
                     }
                     .MainMenuSubList{
                         display: block; 
-                        margin: 0; 
-                        padding: 0;
+                        padding: 0; 
+                        margin: 0;
                     }
                         .MainMenuSubItem{display: block}
                             .MainMenuSubLink{
                                 display: block;
                                 padding: 0.75em 1.5em;
                                 color: #222;
-                                background-color: transparent;
                                 text-decoration: none;
+                                background-color: transparent;
                                 &:hover{
                                     color: #799900;
                                     background-color: white;
@@ -163,8 +187,8 @@ strong { font-weight: 900; }
             width: 100%;
         }
             .Fieldset{
-            border: none;
-            margin: 0;}
+            margin: 0;
+            border: none;}
                 .Legend{}
                 .Label{}
                 .SearchLabel{}
@@ -174,10 +198,10 @@ strong { font-weight: 900; }
                     }
                     .SearchInput.active{
                         display: block;
-                        margin: auto;
                         width: 100%;
-                        border-radius: 15px;
+                        margin: auto;
                         border: 3px solid #eee;
+                        border-radius: 15px;
                     }
                     .SearchLabelText{}
 
@@ -196,7 +220,124 @@ strong { font-weight: 900; }
             }
 
     .main{}
+            .Features{
+                display: block;
+                margin-top: 3rem;
+            }
+                .FeaturesTitle{
+                    display: block;
+                    margin: 1rem;
+                    font-size: 2rem; 
+                    line-height: 1em;
+                    text-align: center;
+                    
+                 }
+                .FeaturedList{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    margin: 0 1em;
+                    list-style-type: none;
+                    @media (min-width:768px) {
+                        flex-direction: row;
+                        
+                    }
+                }
+                    .FeaturedItem{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0 1em;
+                        margin: 0 0 1em;
+                        text-align: center;
+                    }
+                        .FeaturedImg{display: block;}
+                        .FeatureTitle{display: block; margin: 0;}
+                        .FeatureParagraph{display: block; margin: 0;}
 
+                .MainFeature{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 1rem 0;
+                    text-align: center;
+                    border-top: 1px solid #eee;
+                
+                    @media (min-width:768px) {
+                        flex-direction: row;   
+                        justify-content: center;
+
+                    }
+                }
+                    .MainFeature img{}
+                    .MainFeatureParagraph{
+                        margin: 1rem;
+                    }
+            .BookGrid{}
+                    .BookGridTitle{}
+                    .BookGridList{
+                        display: block;
+                        padding: 0;
+                        list-style-type: none;
+                    }
+                        .BookGridItem {
+                            display: flex;
+                            flex-direction: row;
+                            padding-bottom: 1rem;
+                            margin: 1rem;
+                            border-bottom: 2px dotted #eee;
+                        }
+                            .BookImage{
+                                display: block;
+                                padding: 0;
+                                margin: 0;
+                            }
+                            .BookDetails{
+/*                                 flex-basis: 50%;
+ */                                margin-right: 0.5rem;
+                            }
+                                .BookTitle{
+                                    margin: 0 0 0 0.75rem;
+                                    font-weight: 400;
+                                    color: #000000;
+                                }
+                                .BookAuthor{
+                                    margin: 0 0 0 0.5rem;
+                                    font-weight: 400;
+                                    color: #799900;
+                                }
+                            .BookAvailability{
+                                width: max-content;
+                            }
+                                .BookPrice{
+                                    position: relative;
+                                    z-index: -1;
+                                    display: block;
+                                    font-size: 1rem;
+                                    .Bani{
+                                        position: absolute;
+                                        bottom: 0.4rem;
+                                        left: 1.4rem;
+                                    }
+                                    .Currency{
+                                        position: absolute;
+                                        left: 3.1rem;
+                                    }
+                                }
+                                .BookStatus{
+                                    display: block;
+                                    width: 100%;
+                                    padding: 0.1rem 0.25rem;
+                                    font-size: 0.68rem;
+                                    line-height: 1.2rem;
+                                    color: white;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    background-color: #53acb4;
+                                }
     .footer{}
 
 /**** CSS Ends here ****/
