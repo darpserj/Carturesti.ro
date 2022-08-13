@@ -314,18 +314,55 @@ a:hover {
   margin: 1rem;
 }
 
+.BookGridTitle {
+  text-align: center;
+}
+
 .BookGridList {
   display: block;
   padding: 0;
   list-style-type: none;
 }
+@media (min-width: 630px) {
+  .BookGridList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+    margin: auto;
+  }
+}
+@media (min-width: 992px) {
+  .BookGridList {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}
 
 .BookGridItem {
+  position: relative;
   display: flex;
   flex-direction: row;
-  padding-bottom: 1rem;
+  padding: 1rem 0 1rem 1rem;
   margin: 1rem;
   border-bottom: 2px dotted #eee;
+  outline: 1px solid red;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 992px) {
+  .BookGridItem {
+    /*                                 flex-basis: 50%;
+     */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    padding: 0;
+    /*                                 margin: auto;
+     */
+  }
 }
 
 .BookImage {
@@ -335,9 +372,12 @@ a:hover {
 }
 
 .BookDetails {
-  /*                                 flex-basis: 50%;
-   */
-  margin-right: 0.5rem;
+  margin-right: 0.4rem;
+}
+@media (min-width: 992px) {
+  .BookDetails {
+    text-align: center;
+  }
 }
 
 .BookTitle {
@@ -356,34 +396,80 @@ a:hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  text-align: end;
+}
+
+.BookDiscount {
+  display: inline-block;
+  padding: 0.1rem 0.5rem 0.1rem 0;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  color: #eee;
+  text-align: end;
+  background-color: #e2735f;
+}
+@media (min-width: 992px) {
+  .BookDiscount {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .BookPrice {
   position: relative;
   z-index: -1;
   display: block;
+  margin-bottom: 0.1rem;
   font-size: 1rem;
+}
+@media (min-width: 992px) {
+  .BookPrice {
+    position: absolute;
+    right: 0;
+    bottom: -0.5rem;
+  }
 }
 .BookPrice .Bani {
   position: absolute;
-  bottom: 0.4rem;
-  left: 1.4rem;
+  top: -0.25rem;
 }
 .BookPrice .Currency {
-  position: absolute;
-  left: 3.1rem;
+  margin-left: 1.4rem;
 }
 
 .BookStatus {
   display: block;
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   padding: 0.1rem 0.25rem;
   font-size: 0.68rem;
   line-height: 1.2rem;
-  color: white;
   text-align: center;
   text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  .BookStatus {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+  }
+}
+
+.PreOrder {
+  color: white;
   background-color: #53acb4;
+}
+
+.InStock {
+  color: black;
+  background-color: #f4bb3a;
+}
+
+.Unavailable {
+  color: white;
+  background-color: #666;
 }
 
 /**** CSS Ends here ****//*# sourceMappingURL=styles.css.map */
