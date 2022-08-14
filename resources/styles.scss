@@ -297,31 +297,37 @@ a{
                             position: relative;
                             display: flex;
                             flex-direction: row;
+                            max-width: max-content;
                             padding: 1rem 0 1rem 1rem;
                             margin: 1rem;
                             border-bottom: 2px dotted #eee;
                             outline: 1px solid red;
                             box-shadow: 0 1em 1em rgba($color: #000000, $alpha: 0.1);
                             @media (min-width:992px) {
-/*                                 flex-basis: 50%;
- */                             flex-direction: column;
+                                flex-direction: column;
+                                flex-wrap: wrap;
                                 align-items: center;
                                 justify-content: center;
-                                width: auto;
-                                max-width: max-content;
-                                padding: 0;
-/*                                 margin: auto;
- */                            }
+                                min-height: 387.219px;
+                                padding: 1rem;
+                                margin: 0;
+                           }
 
                         }
                             .BookImage{
                                 display: block;
-                                padding: 0;
+
+                                padding: 1rem;
                                 margin: 0;
+                                @media (min-width:992px) {
+                                    min-width: 100%;
+                                    height: auto;
+                               }
                             }
                             .BookDetails{
                                 margin-right: 0.4rem;
                                 @media (min-width:992px) {
+                                    font-size: 0.8rem;
                                     text-align: center;
                                 }
                             }
@@ -336,7 +342,6 @@ a{
                                     color: #799900;
                                 }
                             .BookAvailability{
-                                width: max-content;
                                 text-align: end;
                             }
                                 .BookDiscount{ 
@@ -375,7 +380,6 @@ a{
                                 }
                                 .BookStatus{
                                     display: block;
-                                    width: max-content;
                                     padding: 0.1rem 0.25rem;
                                     font-size: 0.68rem;
                                     line-height: 1.2rem;
