@@ -314,27 +314,88 @@ a:hover {
   margin: 1rem;
 }
 
-.BookGridTitle {
-  text-align: center;
+/*  COMPLICATED WAY ***********************
+
+.BookGrid{
+    @media (min-width:992px) {
+        display: flex;
+        justify-content: space-evenly;;
+    }
+}
+        .BookGridControls{
+            @media (min-width:992px) {
+                width: 30%;
+            }
+
+        }
+            .BookGridTitle{
+                text-align: center;
+            }
+            .BookGridButton{
+                display: none;
+                @media (min-width:992px) {
+                    display: block;
+                }
+
+            }
+                .BookGridLeft{}
+                .BookGridRight{}
+        .BookGridList{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+
+            list-style-type: none;
+            @media (min-width:630px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+            }
+            @media (min-width:992px){
+                grid-template-columns: 1fr 1fr 1fr 1fr ;
+                gap: 1rem;
+            }
+        } 
+
+        */
+.BookGrid {
+  display: grid;
+}
+@media (min-width: 992px) {
+  .BookGrid {
+    grid-template-rows: 1;
+    grid-template-columns: 0.5fr 3fr;
+    margin: 0 15vw;
+  }
+}
+
+.BookGridButton {
+  display: none;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+}
+@media (min-width: 992px) {
+  .BookGridButton {
+    display: inline-block;
+  }
 }
 
 .BookGridList {
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(294px, 1fr));
+  gap: 1rem;
+  justify-content: end;
   padding: 0;
-  list-style-type: none;
-}
-@media (min-width: 630px) {
-  .BookGridList {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-    margin: auto;
-  }
+  margin: 1rem;
 }
 @media (min-width: 992px) {
   .BookGridList {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 200px);
   }
 }
 
@@ -342,13 +403,11 @@ a:hover {
   position: relative;
   display: flex;
   flex-direction: row;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  padding: 1rem 0 1rem 1rem;
-  margin: 1rem;
+  max-width: 26rem;
+  margin: auto;
   border-bottom: 2px dotted #eee;
-  outline: 1px solid red;
+  /*                             outline: 1px solid red;
+   */
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 992px) {
