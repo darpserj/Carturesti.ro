@@ -380,7 +380,7 @@ a:hover {
 
 .BookImage {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0;
 }
 @media (min-width: 992px) {
